@@ -8,7 +8,7 @@ using namespace std;
 
 void imprimirNumeros() {
     for (int i = 0; i <= 30; i++) {
-        cout << "Numero: " << i << endl;
+        cout << "Número: " << i << endl;
         this_thread::sleep_for(chrono::milliseconds(100));
     }
 }
@@ -33,7 +33,7 @@ int main() {
     auto fin = chrono::high_resolution_clock::now();
     chrono::duration<double> duracion = fin - inicio;
 
-    cout << "Tiempo de ejecucion (1 hilo): " 
+    cout << "Tiempo de ejecución (1 hilo): " 
          << duracion.count() << " segundos" << endl;
 
     return 0;

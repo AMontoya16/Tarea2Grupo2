@@ -7,12 +7,9 @@
 
 using namespace std;
 
-mutex mtx;  // Definición del lock
-
 void imprimirNumeros() {
     for (int i = 0; i <= 30; i++) {
         {
-            lock_guard<mutex> lock(mtx);  // Bloquea cout
             cout << "Numero: " << i << endl;
         }
         this_thread::sleep_for(chrono::milliseconds(100));
@@ -23,7 +20,6 @@ void imprimirLetras() {
     for (int i = 0; i < 30; i++) {
         char letra = 'A' + (rand() % 26);
         {
-            lock_guard<mutex> lock(mtx);  // Bloquea cout
             cout << "Letra: " << letra << endl;
         }
         this_thread::sleep_for(chrono::milliseconds(100));
@@ -44,7 +40,7 @@ int main() {
     auto fin = chrono::high_resolution_clock::now();
     chrono::duration<double> duracion = fin - inicio;
 
-    cout << "Tiempo de ejecucion (2 hilos): " 
+    cout << "Tiempo de ejecución (2 hilos): " 
          << duracion.count() << " segundos" << endl;
 
     return 0;
