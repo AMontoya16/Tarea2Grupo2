@@ -10,7 +10,7 @@ using namespace std;
 void imprimirNumeros() {
     for (int i = 0; i <= 30; i++) {
         {
-            cout << "Numero: " << i << endl;
+            cout << "Número: " << i << endl;
         }
         this_thread::sleep_for(chrono::milliseconds(100));
     }
